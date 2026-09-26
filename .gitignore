@@ -1,0 +1,16 @@
+data/
+results/
+test/data/
+test/results/
+logs/
+*.bam
+*.bai
+*.fastq.gz
+*.fna
+*.fa
+*.fai
+*.amb
+*.ann
+*.bwt
+*.pac
+*.sa
