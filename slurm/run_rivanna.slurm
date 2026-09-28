@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=giab_chr20
 #SBATCH --partition=standard
-#SBATCH --account=YOUR_ALLOCATION
+#SBATCH --account=mohilab
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=48G
 #SBATCH --time=08:00:00
