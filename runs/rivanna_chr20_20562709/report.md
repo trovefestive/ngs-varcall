@@ -79,3 +79,31 @@ False negatives (first 15):
 | chr20   | 23376692 | A     | C          | SNV    | FN       |      nan |    nan |  nan |        nan | het         |
 | chr20   | 32704496 | CA    | C          | INDEL  | FN       |      nan |    nan |  nan |        nan | het         |
 | chr20   | 34845112 | T     | TCACCAC    | INDEL  | FN       |      nan |    nan |  nan |        nan | het         |
+
+## Haplotype-aware benchmark (rtg vcfeval)
+
+Run after the positional evaluation above with `scripts/07_vcfeval.sh` (same evaluation BED, PASS calls, QUAL as score).
+vcfeval reconciles different representations of the same variant and, by default, requires the genotype to match.
+
+| type  | TP   | FP | FN  | precision | recall | F1     |
+|:------|-----:|---:|----:|----------:|-------:|-------:|
+| SNV   | 1377 |  7 |  77 |    0.9949 | 0.9470 | 0.9704 |
+| INDEL |  108 | 22 |  31 |    0.8308 | 0.7770 | 0.8030 |
+| ALL   | 1485 | 29 | 108 |    0.9808 | 0.9322 | 0.9559 |
+
+With `--squash-ploidy` (allele match only, ignoring genotype): SNV 1379/5/75, INDEL 119/11/20, ALL F1 0.9643.
+This agrees with the positional script, so the lower genotype-aware INDEL F1 comes from 11 indels called het
+where the truth is hom-alt (or vice versa), each counted as one FP plus one FN.
+
+Findings from the site review:
+
+- The apparent FP cluster at chr20:1915304-1915306 (three hom-alt SNVs) and the paired FN indels at 1915303-1915304
+  are the same complex variant in two representations. vcfeval scores all of them as TP.
+- The six het SNV false negatives at chr20:5474151-5474467 are not a depth problem (mean 43x, 172/184 reads MAPQ >= 20).
+  Every read in the window carries an XA tag pointing to chr20:5.50 Mb, a segmental duplication ~27 kb away.
+  The pileup shows 0-1 alt reads at each site, so the alt-haplotype reads have been placed on the paralog; the
+  het FP SNV at chr20:5501412 (DP 42) is the same signal showing up on the other copy. A short-read caller cannot
+  recover these; they are a known limitation of BWA-MEM in recent duplications.
+- Remaining FP indels are mostly low-support (2-7 alt reads) 1-3 bp changes in homopolymer or short tandem repeats,
+  plus three sites where bcftools emitted two alt alleles at one position (1915067, 25452811, 49153906) and only
+  one matches the truth.

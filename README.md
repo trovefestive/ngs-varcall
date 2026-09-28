@@ -52,7 +52,8 @@ has a BWA index for GRCh38 no-alt, point `REF` at it to skip the ~1 h indexing s
   separate "filtered true variant" (`FN_filtered`) from "missed entirely" (`FN`), which is the
   information needed to tune thresholds.
 - **Matching is allele-level**, on (chrom, pos, ref, alt). That is enough for SNVs; for a formal
-  indel benchmark, run `hap.py` or `rtg vcfeval` on `results/eval/*.vcf.gz` with the same BED.
+  indel benchmark, `scripts/07_vcfeval.sh` runs `rtg vcfeval` (haplotype-aware, genotype-checked)
+  on the same BED and writes `results/vcfeval/`. It is not part of `run_all.sh`; run it after.
 
 ## Results (GIAB HG001, chr20, NIST7035 lane 1)
 

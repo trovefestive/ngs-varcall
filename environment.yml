@@ -14,4 +14,4 @@ dependencies:
   - tabulate
   # optional, for a haplotype-aware benchmark:
   # - hap.py
-  # - rtg-tools
+  - rtg-tools
