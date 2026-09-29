@@ -1,0 +1,148 @@
+2026-09-29 12:43:54 serial = 27182818284
+2026-09-29 12:43:54 email = anon
+2026-09-29 12:43:54 RTG version = RTG Tools 3.13 / Core c27844a5bb (2025-05-27)
+2026-09-29 12:43:54 file.encoding = UTF-8
+2026-09-29 12:43:54 file.separator = /
+2026-09-29 12:43:54 host.name = udc-ba06-30c1
+2026-09-29 12:43:54 java.class.path = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/share/rtg-tools-3.13-0/RTG.jar
+2026-09-29 12:43:54 java.class.version = 69.0
+2026-09-29 12:43:54 java.home = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/lib/jvm
+2026-09-29 12:43:54 java.io.tmpdir = /tmp
+2026-09-29 12:43:54 java.library.path = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/share/rtg-tools-3.13-0
+2026-09-29 12:43:54 java.runtime.name = OpenJDK Runtime Environment
+2026-09-29 12:43:54 java.runtime.version = 25.0.2-internal-adhoc.rattler.src
+2026-09-29 12:43:54 java.specification.name = Java Platform API Specification
+2026-09-29 12:43:54 java.specification.vendor = Oracle Corporation
+2026-09-29 12:43:54 java.specification.version = 25
+2026-09-29 12:43:54 java.vendor = N/A
+2026-09-29 12:43:54 java.vendor.url = https://openjdk.org/
+2026-09-29 12:43:54 java.vendor.url.bug = https://bugreport.java.com/bugreport/
+2026-09-29 12:43:54 java.version = 25.0.2-internal
+2026-09-29 12:43:54 java.version.date = 2026-01-20
+2026-09-29 12:43:54 java.vm.info = mixed mode, sharing
+2026-09-29 12:43:54 java.vm.name = OpenJDK 64-Bit Server VM
+2026-09-29 12:43:54 java.vm.specification.name = Java Virtual Machine Specification
+2026-09-29 12:43:54 java.vm.specification.vendor = Oracle Corporation
+2026-09-29 12:43:54 java.vm.specification.version = 25
+2026-09-29 12:43:54 java.vm.vendor = Oracle Corporation
+2026-09-29 12:43:54 java.vm.version = 25.0.2-internal-adhoc.rattler.src
+2026-09-29 12:43:54 jdk.debug = release
+2026-09-29 12:43:54 lang.version = 25.0.2-internal
+2026-09-29 12:43:54 line.separator = 
+
+2026-09-29 12:43:54 models.dir = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/share/rtg-tools-3.13-0/models
+2026-09-29 12:43:54 nashorn.option.no.deprecation.warning = true
+2026-09-29 12:43:54 native.encoding = UTF-8
+2026-09-29 12:43:54 os.arch = amd64
+2026-09-29 12:43:54 os.freememory = 32511193088
+2026-09-29 12:43:54 os.name = Linux
+2026-09-29 12:43:54 os.totalmemory = 51539607552
+2026-09-29 12:43:54 os.version = 4.18.0-553.124.1.el8_10.x86_64
+2026-09-29 12:43:54 path.separator = :
+2026-09-29 12:43:54 polyglot.js.nashorn-compat = true
+2026-09-29 12:43:54 processor.arch = amd64
+2026-09-29 12:43:54 processor.count = 16
+2026-09-29 12:43:54 references.dir = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/share/rtg-tools-3.13-0/references
+2026-09-29 12:43:54 runtime.freememory = 820418168
+2026-09-29 12:43:54 runtime.maxmemory = 46405779456
+2026-09-29 12:43:54 runtime.totalMemory = 838860800
+2026-09-29 12:43:54 stderr.encoding = UTF-8
+2026-09-29 12:43:54 stdin.encoding = UTF-8
+2026-09-29 12:43:54 stdout.encoding = UTF-8
+2026-09-29 12:43:54 sun.arch.data.model = 64
+2026-09-29 12:43:54 sun.boot.library.path = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/lib/jvm/lib
+2026-09-29 12:43:54 sun.cpu.endian = little
+2026-09-29 12:43:54 sun.io.unicode.encoding = UnicodeLittle
+2026-09-29 12:43:54 sun.java.command = /sfs/gpfs/tardis/home/uwy2ak/.conda/envs/ngs-varcall/share/rtg-tools-3.13-0/RTG.jar vcfeval -t data/ref/autosomes.sdf -b data/truth/HG001_v4.2.1.vcf.gz -c results_exome/vcf/NA12878.autosomes.vcf.gz --bed-regions results_exome/bamqc/eval.bed --vcf-score-field QUAL --threads 16 -o results_exome/vcfeval
+2026-09-29 12:43:54 sun.java.launcher = SUN_STANDARD
+2026-09-29 12:43:54 sun.jnu.encoding = UTF-8
+2026-09-29 12:43:54 sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2026-09-29 12:43:54 talkback = true
+2026-09-29 12:43:54 usage = false
+2026-09-29 12:43:54 user.country = US
+2026-09-29 12:43:54 user.dir = /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab
+2026-09-29 12:43:54 user.home = /home/uwy2ak
+2026-09-29 12:43:54 user.language = en
+2026-09-29 12:43:54 user.name = uwy2ak
+2026-09-29 12:43:54 user.timezone = America/New_York
+2026-09-29 12:43:54 vendor = N/A
+2026-09-29 12:43:54 gzipfix.enabled = false
+2026-09-29 12:43:54 Command line arguments: rtg vcfeval -t data/ref/autosomes.sdf -b data/truth/HG001_v4.2.1.vcf.gz -c results_exome/vcf/NA12878.autosomes.vcf.gz --bed-regions results_exome/bamqc/eval.bed --vcf-score-field QUAL --threads 16 -o results_exome/vcfeval
+2026-09-29 12:43:54 Run Id: 2f955925-2c66-462d-b53b-923f3b75f986
+2026-09-29 12:43:54 Referenced SDF-ID: 71d8e993-3af6-4a79-8e59-5517bd1daa5f Type: DNA Sequences: 22 Max-Length: 248956422 Min-Length: 46709983 Arm: UNKNOWN
+2026-09-29 12:43:54 Variant orientors per pass: [unphased (2 haplotypes):unphased (2 haplotypes)]
+2026-09-29 12:43:54 Reference chr1 baseline contains 10574 variants.
+2026-09-29 12:43:54 Reference chr1 calls contains 10456 variants.
+2026-09-29 12:43:55 Reference chr2 baseline contains 7663 variants.
+2026-09-29 12:43:55 Reference chr2 calls contains 7633 variants.
+2026-09-29 12:43:55 Reference chr3 baseline contains 5717 variants.
+2026-09-29 12:43:55 Reference chr3 calls contains 5685 variants.
+2026-09-29 12:43:55 Reference chr4 baseline contains 5028 variants.
+2026-09-29 12:43:55 Reference chr4 calls contains 4939 variants.
+2026-09-29 12:43:55 Reference chr5 baseline contains 4937 variants.
+2026-09-29 12:43:55 Reference chr5 calls contains 4865 variants.
+2026-09-29 12:43:55 Reference chr3 had maximum path complexity of 35 at chr3:197509966-197510257
+2026-09-29 12:43:55 Reference chr6 baseline contains 7270 variants.
+2026-09-29 12:43:55 Reference chr6 calls contains 7019 variants.
+2026-09-29 12:43:55 Reference chr1 had maximum path complexity of 47 at chr1:247448011-247448156
+2026-09-29 12:43:55 Reference chr4 had maximum path complexity of 133 at chr4:6112692-6270098
+2026-09-29 12:43:55 Reference chr7 baseline contains 5296 variants.
+2026-09-29 12:43:55 Reference chr7 calls contains 5223 variants.
+2026-09-29 12:43:55 Reference chr2 had maximum path complexity of 31 at chr2:6896935-6897042
+2026-09-29 12:43:55 Reference chr8 baseline contains 3963 variants.
+2026-09-29 12:43:55 Reference chr8 calls contains 3929 variants.
+2026-09-29 12:43:55 Reference chr5 had maximum path complexity of 31 at chr5:889807-892730
+2026-09-29 12:43:55 Reference chr9 baseline contains 4404 variants.
+2026-09-29 12:43:55 Reference chr9 calls contains 4458 variants.
+2026-09-29 12:43:56 Reference chr7 had maximum path complexity of 33 at chr7:128947297-128949372
+2026-09-29 12:43:56 Reference chr10 baseline contains 5006 variants.
+2026-09-29 12:43:56 Reference chr10 calls contains 4918 variants.
+2026-09-29 12:43:56 Reference chr8 had maximum path complexity of 133 at chr8:23317309-23320105
+2026-09-29 12:43:56 Reference chr6 had maximum path complexity of 459 at chr6:31356428-31356467
+2026-09-29 12:43:56 Reference chr9 had maximum path complexity of 133 at chr9:35689951-35697472
+2026-09-29 12:43:56 Reference chr11 baseline contains 6161 variants.
+2026-09-29 12:43:56 Reference chr11 calls contains 6096 variants.
+2026-09-29 12:43:56 Reference chr10 had maximum path complexity of 31 at chr10:17323012-17323044
+2026-09-29 12:43:56 Reference chr12 baseline contains 5809 variants.
+2026-09-29 12:43:56 Reference chr12 calls contains 5808 variants.
+2026-09-29 12:43:56 Reference chr13 baseline contains 2702 variants.
+2026-09-29 12:43:56 Reference chr13 calls contains 2651 variants.
+2026-09-29 12:43:56 Reference chr11 had maximum path complexity of 133 at chr11:18269353-18269358
+2026-09-29 12:43:56 Reference chr14 baseline contains 3113 variants.
+2026-09-29 12:43:56 Reference chr14 calls contains 3080 variants.
+2026-09-29 12:43:56 Reference chr15 baseline contains 4055 variants.
+2026-09-29 12:43:56 Reference chr15 calls contains 3995 variants.
+2026-09-29 12:43:56 Reference chr13 had maximum path complexity of 31 at chr13:20404887-20489384
+2026-09-29 12:43:56 Reference chr12 had maximum path complexity of 35 at chr12:120697307-120697663
+2026-09-29 12:43:56 Reference chr16 baseline contains 4079 variants.
+2026-09-29 12:43:56 Reference chr16 calls contains 4025 variants.
+2026-09-29 12:43:56 Reference chr17 baseline contains 5663 variants.
+2026-09-29 12:43:56 Reference chr17 calls contains 5601 variants.
+2026-09-29 12:43:56 Reference chr14 had maximum path complexity of 31 at chr14:19827618-19827674
+2026-09-29 12:43:56 Reference chr18 baseline contains 2051 variants.
+2026-09-29 12:43:56 Reference chr18 calls contains 2064 variants.
+2026-09-29 12:43:56 Reference chr15 had maximum path complexity of 133 at chr15:77909875-77909881
+2026-09-29 12:43:56 Reference chr16 had maximum path complexity of 133 at chr16:31760580-31760585
+2026-09-29 12:43:56 Reference chr19 baseline contains 6431 variants.
+2026-09-29 12:43:56 Reference chr19 calls contains 6364 variants.
+2026-09-29 12:43:56 Reference chr17 had maximum path complexity of 133 at chr17:82034261-82035819
+2026-09-29 12:43:56 Reference chr20 baseline contains 2511 variants.
+2026-09-29 12:43:56 Reference chr20 calls contains 2464 variants.
+2026-09-29 12:43:57 Reference chr18 had maximum path complexity of 49 at chr18:911375-1363604
+2026-09-29 12:43:57 Reference chr19 had maximum path complexity of 64 at chr19:41253726-41261072
+2026-09-29 12:43:57 Reference chr21 baseline contains 1517 variants.
+2026-09-29 12:43:57 Reference chr21 calls contains 1501 variants.
+2026-09-29 12:43:57 Reference chr20 had maximum path complexity of 31 at chr20:5863474-5922206
+2026-09-29 12:43:57 Reference chr21 had maximum path complexity of 31 at chr21:13942245-13942416
+2026-09-29 12:43:57 Reference chr22 baseline contains 2563 variants.
+2026-09-29 12:43:57 Reference chr22 calls contains 2489 variants.
+2026-09-29 12:43:57 Reference chr22 had maximum path complexity of 31 at chr22:18150235-18167154
+2026-09-29 12:43:59 Representation bias correction factor for SNP 92299/92311.5 = 0.9998645889190404
+2026-09-29 12:44:00 Representation bias correction factor for NON_SNP 8297/8284.5 = 1.0015088418130242
+2026-09-29 12:44:00 Selected score threshold using: maximized F-measure
+2026-09-29 12:44:00 Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+   26.766             100451         100548       4259       6062     0.9594       0.9431     0.9512
+     None             100596         100693       4570       5917     0.9566       0.9444     0.9505
+
+2026-09-29 12:44:00 Finished successfully in 6 s.
