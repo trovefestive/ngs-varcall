@@ -7,7 +7,8 @@ coverage and a callable-region mask, variant calling, and accuracy against a kno
 with a short list of false positives and false negatives to review in IGV.
 
 **Status:** pipeline tested end to end on simulated data (`test/`) and run on Rivanna against GIAB HG001
-chr20 (one exome lane, then all four lanes merged) and on all autosomes from the four-lane BAM.
+chr20 (one exome lane, then all four lanes merged) and on all autosomes from the four-lane BAM,
+with bcftools and DeepVariant compared by GIAB genome stratification.
 Results and site review are below; the full reports and small outputs for each run are kept in `runs/`.
 
 ## Workflow
@@ -21,6 +22,9 @@ Results and site review are below; the full reports and small outputs for each r
 | 4 | `04_call.sh` | bcftools mpileup/call/norm/filter | normalized, soft-filtered VCF (`LowQual`: QUAL<20 or DP<10; `IndelLowAF`: indel alt fraction < 0.2) |
 | 5 | `05_evaluate.sh`, `evaluate.py` | bcftools, pysam | precision / recall / F1 for SNVs and indels, genotype concordance, per-site table |
 | 6 | `06_report.py` | pandas, matplotlib | `results/report.md` with figures |
+| 7 | `07_vcfeval.sh` | rtg vcfeval | haplotype-aware, genotype-checked benchmark (any call set via `CALLS`/`EVAL`) |
+| 8 | `08_stratify.sh` | bcftools | vcfeval results split by GIAB v3.3 stratification (repeats, segdups, mappability, MHC) |
+| 9 | `09_deepvariant.sh` | DeepVariant 1.6.1 (apptainer) | second call set from the same BAM, for comparison |
 
 `REGION` in `config.sh` sets the chromosomes: chr20 by default, or `REGION=autosomes` for chr1-22
 (the GIAB v4.2.1 truth covers autosomes only). Steps 3 and 4 run one chromosome per process.
@@ -45,6 +49,9 @@ sbatch slurm/run_rivanna_4lane.slurm
 
 # 4) optional: whole exome, chr1-22, reusing the four-lane BAM (after step 3; writes results_exome/)
 sbatch slurm/run_rivanna_exome.slurm
+
+# 5) optional: DeepVariant on the same exome BAM, vcfeval, and stratified comparison of both callers
+sbatch slurm/run_rivanna_deepvariant.slurm
 ```
 
 Settings (threads, thresholds, paths, URLs) are in `config.sh`. If your cluster already
@@ -130,15 +137,44 @@ Four-lane BAM, not realigned. 107.3 Mb at ≥10x (median 63x), 101.3 Mb evaluati
   the same filter raises indel precision by 3.0 points for 1.5 points of recall (F1 0.746 to 0.754;
   allele-only 0.833 to 0.842). The gain is real but small: the remaining indel errors are wrong-allele
   calls in repeats and right-allele/wrong-genotype calls, many at sites bcftools calls as two different
-  indel alleles (`1/2`). Those need a haplotype-aware caller rather than a filter.
+  indel alleles (`1/2`). Those need a haplotype-aware caller rather than a filter (see below).
 - **Mapping limits recur genome-wide.** 139 of the 163 SNV false negatives on chr6 sit in the MHC
   (chr6:28.5-33.5 Mb), the largest cluster in the exome, the same kind of short-read mapping limit as
   the chr20:5.47 Mb paralog cluster.
 - Without the new filter, the chr20 subset of the exome run gives exactly the chr20-only four-lane counts, so the
   per-chromosome rewrite of steps 3-4 reproduces the earlier results.
 
+
+### bcftools vs DeepVariant, by genome context (job 20627173, `runs/rivanna_exome_deepvariant_20627173/`)
+
+DeepVariant 1.6.1 (WES model) on the same four-lane BAM, scored with vcfeval on the same 101.3 Mb
+evaluation BED. Both call sets are then split by GIAB v3.3 stratification (`08_stratify.sh`). F1:
+
+| stratum | truth SNV / INDEL | bcftools SNV | DeepVariant SNV | bcftools INDEL | DeepVariant INDEL |
+|:--|--:|--:|--:|--:|--:|
+| all | 95584 / 10929 | 0.974 | 0.989 | 0.753 | 0.931 |
+| tandem repeat or homopolymer | 3665 / 5368 | 0.942 | 0.983 | 0.594 | 0.874 |
+| not tandem repeat / homopolymer | 91919 / 5561 | 0.975 | 0.989 | 0.926 | 0.985 |
+| segmental duplication | 12140 / 859 | 0.898 | 0.946 | 0.800 | 0.926 |
+| low mappability | 5272 / 330 | 0.835 | 0.899 | 0.714 | 0.850 |
+| MHC | 1937 / 130 | 0.928 | 0.956 | 0.769 | 0.911 |
+| not in any difficult region | 66165 / 4056 | 0.987 | 0.996 | 0.945 | 0.994 |
+
+- **The bcftools indel problem is a repeat problem.** Half of the truth indels sit in tandem repeats or
+  homopolymers, and 94% of bcftools indel false positives (2669 of 2829) fall there (indel precision 0.56
+  in repeats, 0.97 outside). DeepVariant lifts indel F1 in repeats from 0.59 to 0.87 and overall from
+  0.753 to 0.931, with SNV F1 0.974 to 0.989.
+- **Easy regions are solved by either caller.** Outside GIAB's difficult regions DeepVariant reaches
+  SNV/indel F1 0.996/0.994 and bcftools 0.987/0.945.
+- **Mapping limits remain for both.** Low-mappability and segmental-duplication strata are the weakest
+  for both callers, both miss all six SNVs in the chr20:5.47 Mb paralog cluster, and DeepVariant still
+  leaves 144 MHC SNVs undetected (210 for bcftools). Recovering these needs longer reads or
+  alt-aware/graph alignment, not a different caller.
+
 ## Data sources
 
 - GIAB HG001 v4.2.1 benchmark (Wagner et al., *Nat Biotechnol* 2022) — ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/NISTv4.2.1/GRCh38/
 - Garvan NA12878 HiSeq exome (NIST7035) — ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/
 - GRCh38 no-alt analysis set — NCBI GCA_000001405.15
+- GIAB genome stratifications v3.3 (GRCh38) — ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/genome-stratifications/v3.3/
+- DeepVariant 1.6.1 (Poplin et al., *Nat Biotechnol* 2018) — docker://google/deepvariant:1.6.1

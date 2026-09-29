@@ -1,0 +1,827 @@
+[deepvariant] pulling google/deepvariant:1.6.1
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+2026/09/29 13:21:56  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+2026/09/29 13:21:56  warn xattr{/sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/data/containers/tmp/build-temp-3301112665/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+2026/09/29 13:31:30  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+2026/09/29 13:31:30  warn xattr{/sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/data/containers/tmp/build-temp-3301112665/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+2026/09/29 13:48:52  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+2026/09/29 13:48:52  warn xattr{/sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/data/containers/tmp/build-temp-3301112665/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+INFO:    Inserting Apptainer configuration...
+INFO:    Creating SIF file...
+2026-09-29 14:04:25.236329: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0929 14:04:29.738543 22581145585472 run_deepvariant.py:519] Re-using the directory for intermediate results in results_exome/deepvariant/tmp
+
+***** Intermediate results will be written to results_exome/deepvariant/tmp in docker. ****
+
+
+***** Running the command:*****
+time seq 0 31 | parallel -q --halt 2 --line-buffer /opt/deepvariant/bin/make_examples --mode calling --ref "data/ref/GRCh38_no_alt_analysis_set.fna" --reads "/sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam" --examples "results_exome/deepvariant/tmp/make_examples.tfrecord@32.gz" --channels "insert_size" --regions "results_exome/bamqc/callable.bed" --task {}
+
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "C.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "C.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+I0929 14:04:35.011621 23435815331648 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.038961 23435815331648 make_examples_core.py:301] Task 17/32: Preparing inputs
+I0929 14:04:35.046576 23435815331648 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.054014 23435815331648 make_examples_core.py:301] Task 17/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.099107 23435815331648 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.350775 22690537768768 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.300049 23183128880960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.326097 23183128880960 make_examples_core.py:301] Task 4/32: Preparing inputs
+I0929 14:04:35.343419 23183128880960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.357946 23183128880960 make_examples_core.py:301] Task 4/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.367817 23183128880960 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.339367 22873083066176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.351992 22873083066176 make_examples_core.py:301] Task 14/32: Preparing inputs
+I0929 14:04:35.359351 22873083066176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.367092 22873083066176 make_examples_core.py:301] Task 14/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.008308 22848507578176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.033974 22848507578176 make_examples_core.py:301] Task 10/32: Preparing inputs
+I0929 14:04:35.042721 22848507578176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.050430 22848507578176 make_examples_core.py:301] Task 10/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.086540 22848507578176 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.264803 22756845561664 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.288826 22756845561664 make_examples_core.py:301] Task 5/32: Preparing inputs
+I0929 14:04:35.297205 22756845561664 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.304931 22756845561664 make_examples_core.py:301] Task 5/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.310451 22756845561664 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.267880 23337024075584 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.280241 23337024075584 make_examples_core.py:301] Task 0/32: Preparing inputs
+I0929 14:04:35.287481 23337024075584 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.294981 23337024075584 make_examples_core.py:301] Task 0/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.300305 23337024075584 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.345230 22911770986304 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.358452 22911770986304 make_examples_core.py:301] Task 27/32: Preparing inputs
+I0929 14:04:35.365983 22911770986304 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.044193 23213168461632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.056894 23213168461632 make_examples_core.py:301] Task 16/32: Preparing inputs
+I0929 14:04:35.064398 23213168461632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.072142 23213168461632 make_examples_core.py:301] Task 16/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.086591 23213168461632 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.349269 23177986430784 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.361978 23177986430784 make_examples_core.py:301] Task 23/32: Preparing inputs
+I0929 14:04:35.369179 23177986430784 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.165886 22448027907904 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.192261 22448027907904 make_examples_core.py:301] Task 12/32: Preparing inputs
+I0929 14:04:35.200877 22448027907904 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.208572 22448027907904 make_examples_core.py:301] Task 12/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.214436 22448027907904 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.305669 23073030727488 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.317938 23073030727488 make_examples_core.py:301] Task 20/32: Preparing inputs
+I0929 14:04:35.325093 23073030727488 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.332708 23073030727488 make_examples_core.py:301] Task 20/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.338135 23073030727488 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.360559 22529355310912 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.331918 22925064431424 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.345150 22925064431424 make_examples_core.py:301] Task 13/32: Preparing inputs
+I0929 14:04:35.352632 22925064431424 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.360437 22925064431424 make_examples_core.py:301] Task 13/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.366123 22925064431424 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.027521 22795642206016 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.040461 22795642206016 make_examples_core.py:301] Task 1/32: Preparing inputs
+I0929 14:04:35.047919 22795642206016 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.055531 22795642206016 make_examples_core.py:301] Task 1/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.097098 22795642206016 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.418393 23129104586560 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.431552 23129104586560 make_examples_core.py:301] Task 3/32: Preparing inputs
+I0929 14:04:35.443006 23129104586560 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.450463 23129104586560 make_examples_core.py:301] Task 3/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.456993 23129104586560 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.394783 22826353968960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.407299 22826353968960 make_examples_core.py:301] Task 21/32: Preparing inputs
+I0929 14:04:35.415693 22826353968960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.423224 22826353968960 make_examples_core.py:301] Task 21/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.428639 22826353968960 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.573061 22907415385920 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.586057 22907415385920 make_examples_core.py:301] Task 31/32: Preparing inputs
+I0929 14:04:35.601352 22907415385920 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.608709 22907415385920 make_examples_core.py:301] Task 31/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.614421 22907415385920 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.375596 22690537768768 make_examples_core.py:301] Task 19/32: Preparing inputs
+I0929 14:04:35.383512 22690537768768 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.391000 22690537768768 make_examples_core.py:301] Task 19/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.396417 22690537768768 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.372697 22873083066176 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.386009 22962044823360 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.401322 22962044823360 make_examples_core.py:301] Task 6/32: Preparing inputs
+I0929 14:04:35.410665 22962044823360 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.418398 22962044823360 make_examples_core.py:301] Task 6/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.424055 22962044823360 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.385986 23400225052480 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.400971 23400225052480 make_examples_core.py:301] Task 9/32: Preparing inputs
+I0929 14:04:35.410252 23400225052480 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.417722 23400225052480 make_examples_core.py:301] Task 9/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.423207 23400225052480 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.390864 23394350712640 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.404472 23394350712640 make_examples_core.py:301] Task 18/32: Preparing inputs
+I0929 14:04:35.415818 23394350712640 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.423540 23394350712640 make_examples_core.py:301] Task 18/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.429118 23394350712640 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.613255 22361097897792 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.637754 22361097897792 make_examples_core.py:301] Task 15/32: Preparing inputs
+I0929 14:04:35.755204 22361097897792 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.763078 22361097897792 make_examples_core.py:301] Task 15/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.769047 22361097897792 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.377587 23052626765632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.390821 23052626765632 make_examples_core.py:301] Task 24/32: Preparing inputs
+I0929 14:04:35.403963 23052626765632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.411797 23052626765632 make_examples_core.py:301] Task 24/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.417454 23052626765632 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.851240 22589897430848 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.405951 22713187305280 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.420734 22713187305280 make_examples_core.py:301] Task 8/32: Preparing inputs
+I0929 14:04:35.446724 22713187305280 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.460187 22713187305280 make_examples_core.py:301] Task 8/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.466563 22713187305280 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.373793 22911770986304 make_examples_core.py:301] Task 27/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.379453 22911770986304 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.389633 23277679093568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.404094 23277679093568 make_examples_core.py:301] Task 11/32: Preparing inputs
+I0929 14:04:35.417230 23277679093568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.424977 23277679093568 make_examples_core.py:301] Task 11/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.430782 23277679093568 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.385993 22698821621568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.401334 22698821621568 make_examples_core.py:301] Task 22/32: Preparing inputs
+I0929 14:04:35.410597 22698821621568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.418432 22698821621568 make_examples_core.py:301] Task 22/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.424037 22698821621568 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.386142 22727775811392 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.401305 22727775811392 make_examples_core.py:301] Task 28/32: Preparing inputs
+I0929 14:04:35.410626 22727775811392 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.418355 22727775811392 make_examples_core.py:301] Task 28/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.423873 22727775811392 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.376810 23177986430784 make_examples_core.py:301] Task 23/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.382313 23177986430784 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.412652 22796574299968 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.425012 22796574299968 make_examples_core.py:301] Task 2/32: Preparing inputs
+I0929 14:04:35.438466 22796574299968 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.446039 22796574299968 make_examples_core.py:301] Task 2/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.451595 22796574299968 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.405798 23083809089344 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.420666 23083809089344 make_examples_core.py:301] Task 25/32: Preparing inputs
+I0929 14:04:35.430798 23083809089344 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.438486 23083809089344 make_examples_core.py:301] Task 25/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.444176 23083809089344 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.371491 22636366067520 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.386317 22636366067520 make_examples_core.py:301] Task 30/32: Preparing inputs
+I0929 14:04:35.403854 22636366067520 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.411505 22636366067520 make_examples_core.py:301] Task 30/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.417006 22636366067520 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.389708 22481247934272 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.404093 22481247934272 make_examples_core.py:301] Task 26/32: Preparing inputs
+I0929 14:04:35.415834 22481247934272 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.429750 22481247934272 make_examples_core.py:301] Task 26/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.435346 22481247934272 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.386212 22529355310912 make_examples_core.py:301] Task 7/32: Preparing inputs
+I0929 14:04:35.403360 22529355310912 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:35.410983 22529355310912 make_examples_core.py:301] Task 7/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:35.416351 22529355310912 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:35.874957 22589897430848 make_examples_core.py:301] Task 29/32: Preparing inputs
+I0929 14:04:36.002193 22589897430848 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:04:36.021013 22589897430848 make_examples_core.py:301] Task 29/32: Common contigs are ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY', 'chrM']
+I0929 14:04:36.026658 22589897430848 genomics_reader.py:222] Reading results_exome/bamqc/callable.bed with NativeBedReader
+I0929 14:04:41.344658 23435815331648 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.002860 23129104586560 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.644663 22826353968960 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.824564 22873083066176 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.384086 22848507578176 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.502224 22756845561664 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.492363 23337024075584 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.845436 22962044823360 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.704311 23400225052480 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.714534 23394350712640 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.817116 23052626765632 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.811899 22713187305280 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.618750 23213168461632 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.742727 23277679093568 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.803043 22698821621568 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.674761 22727775811392 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.660071 23177986430784 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.745283 22796574299968 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.695815 23083809089344 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.900264 22448027907904 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.780801 22636366067520 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.717286 23073030727488 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.596159 22529355310912 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.998685 22925064431424 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:41.373979 22795642206016 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.711535 22907415385920 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.392838 22690537768768 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.289857 23183128880960 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.961014 22361097897792 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.740025 22589897430848 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.245715 22911770986304 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:04:42.125651 22481247934272 ranges.py:125] Adding interval chr11:6618688-6618980 to intervaltree
+I0929 14:05:00.970280 22795642206016 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:01.407792 23435815331648 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:01.849380 22826353968960 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:01.797965 22848507578176 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:01.710765 22756845561664 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:01.828697 23337024075584 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.013094 23400225052480 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.094951 23394350712640 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.119728 22713187305280 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.064943 23277679093568 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.208432 22727775811392 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.003518 23177986430784 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.107422 23073030727488 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:01.823708 22529355310912 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.935041 23129104586560 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:03.355761 22907415385920 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.956127 23183128880960 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.950852 22873083066176 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.684273 22962044823360 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.549607 23052626765632 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.520846 22911770986304 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.712646 23213168461632 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.858267 22698821621568 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.373174 23083809089344 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.830458 22448027907904 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.441104 22636366067520 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:02.646576 22925064431424 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:04.300422 22690537768768 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:04.416309 22361097897792 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:03.487626 22589897430848 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:03.934355 22481247934272 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:05.272604 22796574299968 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:20.995305 22795642206016 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:22.500534 23435815331648 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:22.902029 22826353968960 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.148576 22848507578176 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:22.818661 22756845561664 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.035733 23337024075584 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:22.979567 23400225052480 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.360830 23394350712640 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.175906 22713187305280 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.530873 22911770986304 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.164698 23277679093568 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.114549 23177986430784 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.310541 23073030727488 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:22.850594 22529355310912 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.091513 22925064431424 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:24.620342 22907415385920 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:24.250571 22962044823360 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.994129 23052626765632 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:24.701578 22589897430848 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:24.562067 23213168461632 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:24.374897 22698821621568 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.840420 22727775811392 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.664862 23083809089344 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:23.863795 22636366067520 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:25.622590 22690537768768 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:25.138038 23183128880960 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:25.706176 22873083066176 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:25.718550 22481247934272 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:26.020561 22361097897792 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:26.628173 22448027907904 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:26.937249 23129104586560 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:26.871832 22796574299968 ranges.py:125] Adding interval chr11:47442623-47442629 to intervaltree
+I0929 14:05:34.858874 22795642206016 make_examples_core.py:301] Task 1/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:34.949960 22795642206016 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:35.015634 22795642206016 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:35.037159 22795642206016 make_examples_core.py:301] Task 1/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00001-of-00032.gz
+I0929 14:05:35.037240 22795642206016 make_examples_core.py:301] Task 1/32: Overhead for preparing inputs: 59 seconds
+I0929 14:05:35.048722 22795642206016 make_examples_core.py:301] Task 1/32: 0 candidates (0 examples) [0.01s elapsed]
+I0929 14:05:37.117641 23435815331648 make_examples_core.py:301] Task 17/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.274234 23435815331648 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.333289 23435815331648 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.370136 23435815331648 make_examples_core.py:301] Task 17/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00017-of-00032.gz
+I0929 14:05:37.370264 23435815331648 make_examples_core.py:301] Task 17/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.372135 23435815331648 make_examples_core.py:301] Task 17/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:37.324341 22826353968960 make_examples_core.py:301] Task 21/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.364417 22826353968960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.419194 22826353968960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.424744 22826353968960 make_examples_core.py:301] Task 21/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00021-of-00032.gz
+I0929 14:05:37.424827 22826353968960 make_examples_core.py:301] Task 21/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.432267 22826353968960 make_examples_core.py:301] Task 21/32: 2 candidates (2 examples) [0.01s elapsed]
+I0929 14:05:37.279590 22756845561664 make_examples_core.py:301] Task 5/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.331496 22756845561664 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.386221 22756845561664 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.388831 22756845561664 make_examples_core.py:301] Task 5/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00005-of-00032.gz
+I0929 14:05:37.388885 22756845561664 make_examples_core.py:301] Task 5/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.426902 22756845561664 make_examples_core.py:301] Task 5/32: 0 candidates (0 examples) [0.04s elapsed]
+I0929 14:05:37.467550 23400225052480 make_examples_core.py:301] Task 9/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.290579 22529355310912 make_examples_core.py:301] Task 7/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.331695 22529355310912 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.386192 22529355310912 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.392542 22529355310912 make_examples_core.py:301] Task 7/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00007-of-00032.gz
+I0929 14:05:37.392630 22529355310912 make_examples_core.py:301] Task 7/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.409111 22529355310912 make_examples_core.py:301] Task 7/32: 0 candidates (0 examples) [0.02s elapsed]
+I0929 14:05:37.678090 22848507578176 make_examples_core.py:301] Task 10/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.760145 22848507578176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.821641 22848507578176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.841117 22848507578176 make_examples_core.py:301] Task 10/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00010-of-00032.gz
+I0929 14:05:37.841214 22848507578176 make_examples_core.py:301] Task 10/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.858432 22848507578176 make_examples_core.py:301] Task 10/32: 1 candidates (1 examples) [0.02s elapsed]
+I0929 14:05:37.668164 23337024075584 make_examples_core.py:301] Task 0/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.707422 23337024075584 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.768447 23337024075584 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.771085 23337024075584 make_examples_core.py:301] Task 0/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00000-of-00032.gz
+I0929 14:05:37.771174 23337024075584 make_examples_core.py:301] Task 0/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.779006 23337024075584 make_examples_core.py:301] Task 0/32: 0 candidates (0 examples) [0.01s elapsed]
+I0929 14:05:37.519438 23400225052480 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.574270 23400225052480 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.576874 23400225052480 make_examples_core.py:301] Task 9/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00009-of-00032.gz
+I0929 14:05:37.576963 23400225052480 make_examples_core.py:301] Task 9/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.594016 23400225052480 make_examples_core.py:301] Task 9/32: 1 candidates (1 examples) [0.02s elapsed]
+I0929 14:05:37.930161 23394350712640 make_examples_core.py:301] Task 18/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.973573 23394350712640 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.028223 23394350712640 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.051082 23394350712640 make_examples_core.py:301] Task 18/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00018-of-00032.gz
+I0929 14:05:38.051186 23394350712640 make_examples_core.py:301] Task 18/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.052723 23394350712640 make_examples_core.py:301] Task 18/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:38.148028 22713187305280 make_examples_core.py:301] Task 8/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:38.195228 22713187305280 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.259580 22713187305280 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.262526 22713187305280 make_examples_core.py:301] Task 8/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00008-of-00032.gz
+I0929 14:05:38.262588 22713187305280 make_examples_core.py:301] Task 8/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.279596 22713187305280 make_examples_core.py:301] Task 8/32: 0 candidates (0 examples) [0.02s elapsed]
+I0929 14:05:37.942566 22911770986304 make_examples_core.py:301] Task 27/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.995390 22911770986304 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.083116 22911770986304 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.096027 22911770986304 make_examples_core.py:301] Task 27/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00027-of-00032.gz
+I0929 14:05:38.096129 22911770986304 make_examples_core.py:301] Task 27/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.097795 22911770986304 make_examples_core.py:301] Task 27/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:37.634399 23277679093568 make_examples_core.py:301] Task 11/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.720551 23277679093568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.810116 23277679093568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.823022 23277679093568 make_examples_core.py:301] Task 11/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00011-of-00032.gz
+I0929 14:05:37.823112 23277679093568 make_examples_core.py:301] Task 11/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.020454 23277679093568 make_examples_core.py:301] Task 11/32: 7 candidates (7 examples) [0.20s elapsed]
+I0929 14:05:38.044974 22727775811392 make_examples_core.py:301] Task 28/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:38.091379 22727775811392 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.178284 22727775811392 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.181927 22727775811392 make_examples_core.py:301] Task 28/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00028-of-00032.gz
+I0929 14:05:38.182001 22727775811392 make_examples_core.py:301] Task 28/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.183928 22727775811392 make_examples_core.py:301] Task 28/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:37.533569 23177986430784 make_examples_core.py:301] Task 23/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.574754 23177986430784 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.629415 23177986430784 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.632165 23177986430784 make_examples_core.py:301] Task 23/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00023-of-00032.gz
+I0929 14:05:37.632262 23177986430784 make_examples_core.py:301] Task 23/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.633619 23177986430784 make_examples_core.py:301] Task 23/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:38.206650 23083809089344 make_examples_core.py:301] Task 25/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:38.248046 23083809089344 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.307871 23083809089344 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.331117 23083809089344 make_examples_core.py:301] Task 25/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00025-of-00032.gz
+I0929 14:05:38.331215 23083809089344 make_examples_core.py:301] Task 25/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.332715 23083809089344 make_examples_core.py:301] Task 25/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:38.544712 22636366067520 make_examples_core.py:301] Task 30/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.793577 23073030727488 make_examples_core.py:301] Task 20/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.832550 23073030727488 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.887509 23073030727488 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.908092 23073030727488 make_examples_core.py:301] Task 20/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00020-of-00032.gz
+I0929 14:05:37.908174 23073030727488 make_examples_core.py:301] Task 20/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:37.909896 23073030727488 make_examples_core.py:301] Task 20/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:37.848579 22925064431424 make_examples_core.py:301] Task 13/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:37.888972 22925064431424 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.951442 22925064431424 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:37.970139 22925064431424 make_examples_core.py:301] Task 13/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00013-of-00032.gz
+I0929 14:05:37.970261 22925064431424 make_examples_core.py:301] Task 13/32: Overhead for preparing inputs: 62 seconds
+I0929 14:05:38.033255 22925064431424 make_examples_core.py:301] Task 13/32: 4 candidates (4 examples) [0.06s elapsed]
+I0929 14:05:39.507762 22907415385920 make_examples_core.py:301] Task 31/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:39.558613 22907415385920 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:39.613490 22907415385920 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:39.625788 22907415385920 make_examples_core.py:301] Task 31/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00031-of-00032.gz
+I0929 14:05:39.625892 22907415385920 make_examples_core.py:301] Task 31/32: Overhead for preparing inputs: 64 seconds
+I0929 14:05:39.627452 22907415385920 make_examples_core.py:301] Task 31/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:39.059584 22962044823360 make_examples_core.py:301] Task 6/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:39.128132 22962044823360 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:39.237718 22962044823360 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:39.249605 22962044823360 make_examples_core.py:301] Task 6/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00006-of-00032.gz
+I0929 14:05:39.249711 22962044823360 make_examples_core.py:301] Task 6/32: Overhead for preparing inputs: 63 seconds
+I0929 14:05:39.266128 22962044823360 make_examples_core.py:301] Task 6/32: 0 candidates (0 examples) [0.02s elapsed]
+I0929 14:05:38.861674 23052626765632 make_examples_core.py:301] Task 24/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:38.901350 23052626765632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.955789 23052626765632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.961617 23052626765632 make_examples_core.py:301] Task 24/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00024-of-00032.gz
+I0929 14:05:38.961701 23052626765632 make_examples_core.py:301] Task 24/32: Overhead for preparing inputs: 63 seconds
+I0929 14:05:38.963258 23052626765632 make_examples_core.py:301] Task 24/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:39.117523 22698821621568 make_examples_core.py:301] Task 22/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:39.168078 22698821621568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:39.246408 22698821621568 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:39.274052 22698821621568 make_examples_core.py:301] Task 22/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00022-of-00032.gz
+I0929 14:05:39.274150 22698821621568 make_examples_core.py:301] Task 22/32: Overhead for preparing inputs: 63 seconds
+I0929 14:05:39.275433 22698821621568 make_examples_core.py:301] Task 22/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:38.582832 22636366067520 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.641845 22636366067520 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:38.668143 22636366067520 make_examples_core.py:301] Task 30/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00030-of-00032.gz
+I0929 14:05:38.668273 22636366067520 make_examples_core.py:301] Task 30/32: Overhead for preparing inputs: 63 seconds
+I0929 14:05:38.670238 22636366067520 make_examples_core.py:301] Task 30/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:40.272806 22690537768768 make_examples_core.py:301] Task 19/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:40.324164 22690537768768 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.380040 22690537768768 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.384631 22690537768768 make_examples_core.py:301] Task 19/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00019-of-00032.gz
+I0929 14:05:40.384726 22690537768768 make_examples_core.py:301] Task 19/32: Overhead for preparing inputs: 65 seconds
+I0929 14:05:40.386378 22690537768768 make_examples_core.py:301] Task 19/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:40.038584 23183128880960 make_examples_core.py:301] Task 4/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:40.081147 23183128880960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.135812 23183128880960 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.141530 23183128880960 make_examples_core.py:301] Task 4/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00004-of-00032.gz
+I0929 14:05:40.141628 23183128880960 make_examples_core.py:301] Task 4/32: Overhead for preparing inputs: 64 seconds
+I0929 14:05:40.164400 23183128880960 make_examples_core.py:301] Task 4/32: 2 candidates (2 examples) [0.02s elapsed]
+I0929 14:05:40.697072 22589897430848 make_examples_core.py:301] Task 29/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:39.889683 23213168461632 make_examples_core.py:301] Task 16/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:39.976886 23213168461632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.064152 23213168461632 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.131123 23213168461632 make_examples_core.py:301] Task 16/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00016-of-00032.gz
+I0929 14:05:40.131253 23213168461632 make_examples_core.py:301] Task 16/32: Overhead for preparing inputs: 65 seconds
+I0929 14:05:40.133296 23213168461632 make_examples_core.py:301] Task 16/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:40.708559 22873083066176 make_examples_core.py:301] Task 14/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:40.745344 22873083066176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.802666 22873083066176 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.807544 22873083066176 make_examples_core.py:301] Task 14/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00014-of-00032.gz
+I0929 14:05:40.807602 22873083066176 make_examples_core.py:301] Task 14/32: Overhead for preparing inputs: 65 seconds
+I0929 14:05:40.809168 22873083066176 make_examples_core.py:301] Task 14/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:40.745465 22589897430848 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.804850 22589897430848 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:40.807995 22589897430848 make_examples_core.py:301] Task 29/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00029-of-00032.gz
+I0929 14:05:40.808088 22589897430848 make_examples_core.py:301] Task 29/32: Overhead for preparing inputs: 64 seconds
+I0929 14:05:40.809904 22589897430848 make_examples_core.py:301] Task 29/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:41.718870 22796574299968 make_examples_core.py:301] Task 2/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:41.500627 22481247934272 make_examples_core.py:301] Task 26/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:41.560627 22481247934272 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:41.626461 22481247934272 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:41.657618 22481247934272 make_examples_core.py:301] Task 26/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00026-of-00032.gz
+I0929 14:05:41.657743 22481247934272 make_examples_core.py:301] Task 26/32: Overhead for preparing inputs: 66 seconds
+I0929 14:05:41.659629 22481247934272 make_examples_core.py:301] Task 26/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:41.906049 23129104586560 make_examples_core.py:301] Task 3/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:41.948947 23129104586560 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:42.026085 23129104586560 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:42.036583 23129104586560 make_examples_core.py:301] Task 3/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00003-of-00032.gz
+I0929 14:05:42.036700 23129104586560 make_examples_core.py:301] Task 3/32: Overhead for preparing inputs: 66 seconds
+I0929 14:05:42.083949 23129104586560 make_examples_core.py:301] Task 3/32: 4 candidates (4 examples) [0.05s elapsed]
+I0929 14:05:42.105628 22361097897792 make_examples_core.py:301] Task 15/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:42.146486 22361097897792 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:42.201351 22361097897792 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:42.218075 22361097897792 make_examples_core.py:301] Task 15/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00015-of-00032.gz
+I0929 14:05:42.218191 22361097897792 make_examples_core.py:301] Task 15/32: Overhead for preparing inputs: 66 seconds
+I0929 14:05:42.219716 22361097897792 make_examples_core.py:301] Task 15/32: 0 candidates (0 examples) [0.00s elapsed]
+I0929 14:05:41.769013 22796574299968 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:41.830789 22796574299968 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:41.846308 22796574299968 make_examples_core.py:301] Task 2/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00002-of-00032.gz
+I0929 14:05:41.846439 22796574299968 make_examples_core.py:301] Task 2/32: Overhead for preparing inputs: 66 seconds
+I0929 14:05:41.923322 22796574299968 make_examples_core.py:301] Task 2/32: 4 candidates (4 examples) [0.08s elapsed]
+I0929 14:05:44.143798 22448027907904 make_examples_core.py:301] Task 12/32: Starting from v0.9.0, --use_ref_for_cram is default to true. If you are using CRAM input, note that we will decode CRAM using the reference you passed in with --ref
+I0929 14:05:44.297216 22448027907904 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:44.417188 22448027907904 genomics_reader.py:222] Reading /sfs/weka/scratch/uwy2ak/2026-ngs-varcall/ngs-variant-calling-giab/results_4lane/bam/NA12878.md.bam with NativeSamReader
+I0929 14:05:44.463157 22448027907904 make_examples_core.py:301] Task 12/32: Writing examples to results_exome/deepvariant/tmp/make_examples.tfrecord-00012-of-00032.gz
+I0929 14:05:44.463283 22448027907904 make_examples_core.py:301] Task 12/32: Overhead for preparing inputs: 69 seconds
+I0929 14:05:44.469959 22448027907904 make_examples_core.py:301] Task 12/32: 0 candidates (0 examples) [0.01s elapsed]
+I0929 14:06:46.392796 23400225052480 make_examples_core.py:301] Task 9/32: 2000 candidates (2443 examples) [68.80s elapsed]
+I0929 14:06:47.496029 23052626765632 make_examples_core.py:301] Task 24/32: 2000 candidates (2360 examples) [68.53s elapsed]
+I0929 14:06:47.677405 22698821621568 make_examples_core.py:301] Task 22/32: 2000 candidates (2337 examples) [68.40s elapsed]
+I0929 14:06:48.428918 22911770986304 make_examples_core.py:301] Task 27/32: 2000 candidates (2348 examples) [70.33s elapsed]
+I0929 14:06:48.664489 23177986430784 make_examples_core.py:301] Task 23/32: 2000 candidates (2407 examples) [71.03s elapsed]
+I0929 14:06:48.284952 23083809089344 make_examples_core.py:301] Task 25/32: 2000 candidates (2425 examples) [69.95s elapsed]
+I0929 14:06:47.955107 22529355310912 make_examples_core.py:301] Task 7/32: 2001 candidates (2358 examples) [70.55s elapsed]
+I0929 14:06:49.727798 22636366067520 make_examples_core.py:301] Task 30/32: 2001 candidates (2440 examples) [71.06s elapsed]
+I0929 14:06:49.783239 22795642206016 make_examples_core.py:301] Task 1/32: 2000 candidates (2471 examples) [74.73s elapsed]
+I0929 14:06:50.494292 23337024075584 make_examples_core.py:301] Task 0/32: 2000 candidates (2402 examples) [72.72s elapsed]
+I0929 14:06:50.250721 23394350712640 make_examples_core.py:301] Task 18/32: 2000 candidates (2412 examples) [72.20s elapsed]
+I0929 14:06:52.015979 23435815331648 make_examples_core.py:301] Task 17/32: 2000 candidates (2321 examples) [74.64s elapsed]
+I0929 14:06:51.454056 22907415385920 make_examples_core.py:301] Task 31/32: 2000 candidates (2374 examples) [71.83s elapsed]
+I0929 14:06:51.279513 22756845561664 make_examples_core.py:301] Task 5/32: 2000 candidates (2359 examples) [73.85s elapsed]
+I0929 14:06:51.393361 23073030727488 make_examples_core.py:301] Task 20/32: 2000 candidates (2453 examples) [73.48s elapsed]
+I0929 14:06:52.792309 22962044823360 make_examples_core.py:301] Task 6/32: 2001 candidates (2362 examples) [73.53s elapsed]
+I0929 14:06:52.152641 22727775811392 make_examples_core.py:301] Task 28/32: 2000 candidates (2439 examples) [73.97s elapsed]
+I0929 14:06:53.325454 23129104586560 make_examples_core.py:301] Task 3/32: 2000 candidates (2301 examples) [71.24s elapsed]
+I0929 14:06:53.744725 22848507578176 make_examples_core.py:301] Task 10/32: 2012 candidates (2475 examples) [75.89s elapsed]
+I0929 14:06:54.572187 23183128880960 make_examples_core.py:301] Task 4/32: 2002 candidates (2390 examples) [74.41s elapsed]
+I0929 14:06:54.527227 22481247934272 make_examples_core.py:301] Task 26/32: 2000 candidates (2302 examples) [72.87s elapsed]
+I0929 14:06:54.428545 22925064431424 make_examples_core.py:301] Task 13/32: 2000 candidates (2331 examples) [76.40s elapsed]
+I0929 14:06:55.401854 22826353968960 make_examples_core.py:301] Task 21/32: 2000 candidates (2333 examples) [77.97s elapsed]
+I0929 14:06:55.463366 22589897430848 make_examples_core.py:301] Task 29/32: 2000 candidates (2420 examples) [74.65s elapsed]
+I0929 14:06:56.699515 22690537768768 make_examples_core.py:301] Task 19/32: 2000 candidates (2383 examples) [76.31s elapsed]
+I0929 14:06:57.020583 22713187305280 make_examples_core.py:301] Task 8/32: 2001 candidates (2407 examples) [78.74s elapsed]
+I0929 14:06:57.347161 23213168461632 make_examples_core.py:301] Task 16/32: 2000 candidates (2455 examples) [77.21s elapsed]
+I0929 14:06:57.970019 23277679093568 make_examples_core.py:301] Task 11/32: 2001 candidates (2373 examples) [79.95s elapsed]
+I0929 14:06:57.671382 22448027907904 make_examples_core.py:301] Task 12/32: 2003 candidates (2333 examples) [73.20s elapsed]
+I0929 14:06:59.650364 22873083066176 make_examples_core.py:301] Task 14/32: 2000 candidates (2439 examples) [78.84s elapsed]
+I0929 14:07:00.008628 22361097897792 make_examples_core.py:301] Task 15/32: 2000 candidates (2440 examples) [77.79s elapsed]
+I0929 14:07:00.033123 22796574299968 make_examples_core.py:301] Task 2/32: 2000 candidates (2482 examples) [78.11s elapsed]
+I0929 14:08:00.937830 23083809089344 make_examples_core.py:301] Task 25/32: 4000 candidates (4809 examples) [72.65s elapsed]
+I0929 14:08:02.108891 23400225052480 make_examples_core.py:301] Task 9/32: 4000 candidates (4812 examples) [75.72s elapsed]
+I0929 14:08:03.239831 23337024075584 make_examples_core.py:301] Task 0/32: 4000 candidates (4818 examples) [72.75s elapsed]
+I0929 14:08:03.204573 22529355310912 make_examples_core.py:301] Task 7/32: 4001 candidates (4707 examples) [75.25s elapsed]
+I0929 14:08:03.834352 22698821621568 make_examples_core.py:301] Task 22/32: 4001 candidates (4675 examples) [76.16s elapsed]
+I0929 14:08:06.916986 22727775811392 make_examples_core.py:301] Task 28/32: 4002 candidates (4843 examples) [74.76s elapsed]
+I0929 14:08:06.701446 22636366067520 make_examples_core.py:301] Task 30/32: 4000 candidates (4862 examples) [76.97s elapsed]
+I0929 14:08:08.681417 23129104586560 make_examples_core.py:301] Task 3/32: 4001 candidates (4654 examples) [75.36s elapsed]
+I0929 14:08:07.920263 23052626765632 make_examples_core.py:301] Task 24/32: 4000 candidates (4724 examples) [80.42s elapsed]
+I0929 14:08:09.284781 22795642206016 make_examples_core.py:301] Task 1/32: 4007 candidates (4894 examples) [79.50s elapsed]
+I0929 14:08:10.804416 22826353968960 make_examples_core.py:301] Task 21/32: 4003 candidates (4716 examples) [75.40s elapsed]
+I0929 14:08:09.924364 22907415385920 make_examples_core.py:301] Task 31/32: 4000 candidates (4769 examples) [78.47s elapsed]
+I0929 14:08:10.017943 22848507578176 make_examples_core.py:301] Task 10/32: 4001 candidates (4893 examples) [76.27s elapsed]
+I0929 14:08:09.890270 22756845561664 make_examples_core.py:301] Task 5/32: 4000 candidates (4701 examples) [78.61s elapsed]
+I0929 14:08:11.412606 22962044823360 make_examples_core.py:301] Task 6/32: 4002 candidates (4736 examples) [78.62s elapsed]
+I0929 14:08:11.465576 23394350712640 make_examples_core.py:301] Task 18/32: 4001 candidates (4787 examples) [81.21s elapsed]
+I0929 14:08:11.560203 22911770986304 make_examples_core.py:301] Task 27/32: 4000 candidates (4729 examples) [83.13s elapsed]
+I0929 14:08:10.893051 23177986430784 make_examples_core.py:301] Task 23/32: 4007 candidates (4720 examples) [82.23s elapsed]
+I0929 14:08:12.097835 23183128880960 make_examples_core.py:301] Task 4/32: 4002 candidates (4745 examples) [77.53s elapsed]
+I0929 14:08:14.046502 22796574299968 make_examples_core.py:301] Task 2/32: 4005 candidates (4740 examples) [74.01s elapsed]
+I0929 14:08:14.167991 22448027907904 make_examples_core.py:301] Task 12/32: 4002 candidates (4740 examples) [76.50s elapsed]
+I0929 14:08:14.900969 22481247934272 make_examples_core.py:301] Task 26/32: 4002 candidates (4637 examples) [80.37s elapsed]
+I0929 14:08:15.490862 23435815331648 make_examples_core.py:301] Task 17/32: 4002 candidates (4754 examples) [83.47s elapsed]
+I0929 14:08:16.144678 23073030727488 make_examples_core.py:301] Task 20/32: 4003 candidates (4887 examples) [84.75s elapsed]
+I0929 14:08:15.291669 22925064431424 make_examples_core.py:301] Task 13/32: 4000 candidates (4788 examples) [80.86s elapsed]
+I0929 14:08:17.194087 23213168461632 make_examples_core.py:301] Task 16/32: 4000 candidates (4902 examples) [79.85s elapsed]
+I0929 14:08:17.619281 22873083066176 make_examples_core.py:301] Task 14/32: 4005 candidates (4841 examples) [77.97s elapsed]
+I0929 14:08:18.080509 23277679093568 make_examples_core.py:301] Task 11/32: 4001 candidates (4799 examples) [80.11s elapsed]
+I0929 14:08:20.250999 22713187305280 make_examples_core.py:301] Task 8/32: 4002 candidates (4793 examples) [83.23s elapsed]
+I0929 14:08:20.716503 22589897430848 make_examples_core.py:301] Task 29/32: 4000 candidates (4802 examples) [85.25s elapsed]
+I0929 14:08:22.700034 22690537768768 make_examples_core.py:301] Task 19/32: 4009 candidates (4756 examples) [86.00s elapsed]
+I0929 14:08:24.162636 22361097897792 make_examples_core.py:301] Task 15/32: 4002 candidates (4840 examples) [84.15s elapsed]
+I0929 14:08:48.001388 23400225052480 make_examples_core.py:301] Task 9/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00009-of-00032.gz.example_info.json
+I0929 14:08:48.001610 23400225052480 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:48.001650 23400225052480 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:48.021813 23400225052480 make_examples_core.py:301] Task 9/32: Found 5167 candidate variants
+I0929 14:08:48.021880 23400225052480 make_examples_core.py:301] Task 9/32: Created 6172 examples
+I0929 14:08:49.278630 22848507578176 make_examples_core.py:301] Task 10/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00010-of-00032.gz.example_info.json
+I0929 14:08:49.278795 22848507578176 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:49.278838 22848507578176 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:49.326485 22848507578176 make_examples_core.py:301] Task 10/32: Found 4980 candidate variants
+I0929 14:08:49.326595 22848507578176 make_examples_core.py:301] Task 10/32: Created 6049 examples
+I0929 14:08:49.451589 22756845561664 make_examples_core.py:301] Task 5/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00005-of-00032.gz.example_info.json
+I0929 14:08:49.451833 22756845561664 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:49.451874 22756845561664 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:49.459017 22756845561664 make_examples_core.py:301] Task 5/32: Found 5073 candidate variants
+I0929 14:08:49.459073 22756845561664 make_examples_core.py:301] Task 5/32: Created 5955 examples
+I0929 14:08:49.414822 23177986430784 make_examples_core.py:301] Task 23/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00023-of-00032.gz.example_info.json
+I0929 14:08:49.415072 23177986430784 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:49.415116 23177986430784 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:49.418852 23177986430784 make_examples_core.py:301] Task 23/32: Found 4956 candidate variants
+I0929 14:08:49.418901 23177986430784 make_examples_core.py:301] Task 23/32: Created 5803 examples
+I0929 14:08:50.940831 22795642206016 make_examples_core.py:301] Task 1/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00001-of-00032.gz.example_info.json
+I0929 14:08:50.941109 22795642206016 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:50.941154 22795642206016 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:50.959846 22795642206016 make_examples_core.py:301] Task 1/32: Found 5024 candidate variants
+I0929 14:08:50.959973 22795642206016 make_examples_core.py:301] Task 1/32: Created 6077 examples
+I0929 14:08:51.745591 23183128880960 make_examples_core.py:301] Task 4/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00004-of-00032.gz.example_info.json
+I0929 14:08:51.745849 23183128880960 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:51.745892 23183128880960 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:51.765435 23183128880960 make_examples_core.py:301] Task 4/32: Found 4989 candidate variants
+I0929 14:08:51.765529 23183128880960 make_examples_core.py:301] Task 4/32: Created 5899 examples
+I0929 14:08:51.915018 22962044823360 make_examples_core.py:301] Task 6/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00006-of-00032.gz.example_info.json
+I0929 14:08:51.915250 22962044823360 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:51.915294 22962044823360 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:51.923913 22962044823360 make_examples_core.py:301] Task 6/32: Found 5076 candidate variants
+I0929 14:08:51.923988 22962044823360 make_examples_core.py:301] Task 6/32: Created 5947 examples
+I0929 14:08:52.248369 22529355310912 make_examples_core.py:301] Task 7/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00007-of-00032.gz.example_info.json
+I0929 14:08:52.248596 22529355310912 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:52.248636 22529355310912 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:52.261701 22529355310912 make_examples_core.py:301] Task 7/32: Found 5153 candidate variants
+I0929 14:08:52.261757 22529355310912 make_examples_core.py:301] Task 7/32: Created 6073 examples
+I0929 14:08:52.927735 23083809089344 make_examples_core.py:301] Task 25/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00025-of-00032.gz.example_info.json
+I0929 14:08:52.927989 23083809089344 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:52.928032 23083809089344 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:52.939968 23083809089344 make_examples_core.py:301] Task 25/32: Found 5311 candidate variants
+I0929 14:08:52.940039 23083809089344 make_examples_core.py:301] Task 25/32: Created 6292 examples
+I0929 14:08:53.477976 23052626765632 make_examples_core.py:301] Task 24/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00024-of-00032.gz.example_info.json
+I0929 14:08:53.478232 23052626765632 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:53.478276 23052626765632 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:53.492868 23052626765632 make_examples_core.py:301] Task 24/32: Found 5111 candidate variants
+I0929 14:08:53.492974 23052626765632 make_examples_core.py:301] Task 24/32: Created 6019 examples
+I0929 14:08:53.814933 22698821621568 make_examples_core.py:301] Task 22/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00022-of-00032.gz.example_info.json
+I0929 14:08:53.815189 22698821621568 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:53.815232 22698821621568 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:53.816397 22698821621568 make_examples_core.py:301] Task 22/32: Found 5317 candidate variants
+I0929 14:08:53.816439 22698821621568 make_examples_core.py:301] Task 22/32: Created 6216 examples
+I0929 14:08:54.016733 23394350712640 make_examples_core.py:301] Task 18/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00018-of-00032.gz.example_info.json
+I0929 14:08:54.016947 23394350712640 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:54.016983 23394350712640 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:54.021716 23394350712640 make_examples_core.py:301] Task 18/32: Found 5135 candidate variants
+I0929 14:08:54.021766 23394350712640 make_examples_core.py:301] Task 18/32: Created 6148 examples
+I0929 14:08:54.894638 23337024075584 make_examples_core.py:301] Task 0/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00000-of-00032.gz.example_info.json
+I0929 14:08:54.894890 23337024075584 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:54.894939 23337024075584 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:54.909096 23337024075584 make_examples_core.py:301] Task 0/32: Found 5401 candidate variants
+I0929 14:08:54.909160 23337024075584 make_examples_core.py:301] Task 0/32: Created 6383 examples
+I0929 14:08:55.395611 22911770986304 make_examples_core.py:301] Task 27/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00027-of-00032.gz.example_info.json
+I0929 14:08:55.395859 22911770986304 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:55.395902 22911770986304 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:55.396966 22911770986304 make_examples_core.py:301] Task 27/32: Found 5007 candidate variants
+I0929 14:08:55.397006 22911770986304 make_examples_core.py:301] Task 27/32: Created 5912 examples
+I0929 14:08:56.361402 22589897430848 make_examples_core.py:301] Task 29/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00029-of-00032.gz.example_info.json
+I0929 14:08:56.361636 22589897430848 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:56.361678 22589897430848 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:56.403896 22589897430848 make_examples_core.py:301] Task 29/32: Found 4883 candidate variants
+I0929 14:08:56.403997 22589897430848 make_examples_core.py:301] Task 29/32: Created 5815 examples
+I0929 14:08:57.685383 22826353968960 make_examples_core.py:301] Task 21/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00021-of-00032.gz.example_info.json
+I0929 14:08:57.685625 22826353968960 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:57.685666 22826353968960 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:57.691205 22826353968960 make_examples_core.py:301] Task 21/32: Found 5186 candidate variants
+I0929 14:08:57.691270 22826353968960 make_examples_core.py:301] Task 21/32: Created 6072 examples
+I0929 14:08:58.400438 23435815331648 make_examples_core.py:301] Task 17/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00017-of-00032.gz.example_info.json
+I0929 14:08:58.400636 23435815331648 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:58.400678 23435815331648 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:58.401737 23435815331648 make_examples_core.py:301] Task 17/32: Found 4984 candidate variants
+I0929 14:08:58.401775 23435815331648 make_examples_core.py:301] Task 17/32: Created 5887 examples
+I0929 14:08:58.661620 23073030727488 make_examples_core.py:301] Task 20/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00020-of-00032.gz.example_info.json
+I0929 14:08:58.662403 23073030727488 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:58.662467 23073030727488 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:58.675499 23073030727488 make_examples_core.py:301] Task 20/32: Found 5102 candidate variants
+I0929 14:08:58.675556 23073030727488 make_examples_core.py:301] Task 20/32: Created 6194 examples
+I0929 14:08:59.878966 22636366067520 make_examples_core.py:301] Task 30/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00030-of-00032.gz.example_info.json
+I0929 14:08:59.879210 22636366067520 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:08:59.879254 22636366067520 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:08:59.898176 22636366067520 make_examples_core.py:301] Task 30/32: Found 5364 candidate variants
+I0929 14:08:59.898285 22636366067520 make_examples_core.py:301] Task 30/32: Created 6456 examples
+I0929 14:09:00.104080 22907415385920 make_examples_core.py:301] Task 31/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00031-of-00032.gz.example_info.json
+I0929 14:09:00.104488 22907415385920 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:00.104535 22907415385920 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:00.105563 22907415385920 make_examples_core.py:301] Task 31/32: Found 5298 candidate variants
+I0929 14:09:00.105605 22907415385920 make_examples_core.py:301] Task 31/32: Created 6292 examples
+I0929 14:09:00.474518 23213168461632 make_examples_core.py:301] Task 16/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00016-of-00032.gz.example_info.json
+I0929 14:09:00.474944 23213168461632 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:00.475010 23213168461632 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:00.477344 23213168461632 make_examples_core.py:301] Task 16/32: Found 5118 candidate variants
+I0929 14:09:00.477395 23213168461632 make_examples_core.py:301] Task 16/32: Created 6192 examples
+I0929 14:09:01.329469 23129104586560 make_examples_core.py:301] Task 3/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00003-of-00032.gz.example_info.json
+I0929 14:09:01.329720 23129104586560 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:01.329764 23129104586560 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:01.358777 23129104586560 make_examples_core.py:301] Task 3/32: Found 5352 candidate variants
+I0929 14:09:01.358853 23129104586560 make_examples_core.py:301] Task 3/32: Created 6211 examples
+I0929 14:09:01.579849 23277679093568 make_examples_core.py:301] Task 11/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00011-of-00032.gz.example_info.json
+I0929 14:09:01.580150 23277679093568 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:01.580238 23277679093568 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:01.596645 23277679093568 make_examples_core.py:301] Task 11/32: Found 5121 candidate variants
+I0929 14:09:01.596724 23277679093568 make_examples_core.py:301] Task 11/32: Created 6110 examples
+I0929 14:09:02.138338 22796574299968 make_examples_core.py:301] Task 2/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00002-of-00032.gz.example_info.json
+I0929 14:09:02.138602 22796574299968 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:02.138643 22796574299968 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:02.153423 22796574299968 make_examples_core.py:301] Task 2/32: Found 5114 candidate variants
+I0929 14:09:02.153506 22796574299968 make_examples_core.py:301] Task 2/32: Created 6025 examples
+I0929 14:09:02.469559 22925064431424 make_examples_core.py:301] Task 13/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00013-of-00032.gz.example_info.json
+I0929 14:09:02.469799 22925064431424 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:02.469839 22925064431424 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:02.491706 22925064431424 make_examples_core.py:301] Task 13/32: Found 5178 candidate variants
+I0929 14:09:02.491766 22925064431424 make_examples_core.py:301] Task 13/32: Created 6124 examples
+I0929 14:09:03.248928 22481247934272 make_examples_core.py:301] Task 26/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00026-of-00032.gz.example_info.json
+I0929 14:09:03.249167 22481247934272 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:03.249207 22481247934272 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:03.250380 22481247934272 make_examples_core.py:301] Task 26/32: Found 5095 candidate variants
+I0929 14:09:03.250419 22481247934272 make_examples_core.py:301] Task 26/32: Created 5935 examples
+I0929 14:09:05.311183 22690537768768 make_examples_core.py:301] Task 19/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00019-of-00032.gz.example_info.json
+I0929 14:09:05.311789 22690537768768 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:05.311855 22690537768768 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:05.320418 22690537768768 make_examples_core.py:301] Task 19/32: Found 5062 candidate variants
+I0929 14:09:05.320469 22690537768768 make_examples_core.py:301] Task 19/32: Created 5974 examples
+I0929 14:09:05.862555 22361097897792 make_examples_core.py:301] Task 15/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00015-of-00032.gz.example_info.json
+I0929 14:09:05.862810 22361097897792 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:05.862852 22361097897792 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:05.884391 22361097897792 make_examples_core.py:301] Task 15/32: Found 5065 candidate variants
+I0929 14:09:05.884472 22361097897792 make_examples_core.py:301] Task 15/32: Created 6068 examples
+I0929 14:09:07.229173 22727775811392 make_examples_core.py:301] Task 28/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00028-of-00032.gz.example_info.json
+I0929 14:09:07.229403 22727775811392 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:07.229469 22727775811392 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:07.250278 22727775811392 make_examples_core.py:301] Task 28/32: Found 5513 candidate variants
+I0929 14:09:07.250343 22727775811392 make_examples_core.py:301] Task 28/32: Created 6570 examples
+I0929 14:09:07.310168 22873083066176 make_examples_core.py:301] Task 14/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00014-of-00032.gz.example_info.json
+I0929 14:09:07.310409 22873083066176 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:07.310454 22873083066176 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:07.311680 22873083066176 make_examples_core.py:301] Task 14/32: Found 5133 candidate variants
+I0929 14:09:07.311723 22873083066176 make_examples_core.py:301] Task 14/32: Created 6143 examples
+I0929 14:09:07.577690 22448027907904 make_examples_core.py:301] Task 12/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00012-of-00032.gz.example_info.json
+I0929 14:09:07.577836 22448027907904 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:07.577870 22448027907904 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:07.581019 22448027907904 make_examples_core.py:301] Task 12/32: Found 5298 candidate variants
+I0929 14:09:07.581068 22448027907904 make_examples_core.py:301] Task 12/32: Created 6257 examples
+I0929 14:09:07.944848 22713187305280 make_examples_core.py:301] Task 8/32: Writing example info to results_exome/deepvariant/tmp/make_examples.tfrecord-00008-of-00032.gz.example_info.json
+I0929 14:09:07.945132 22713187305280 make_examples_core.py:2958] example_shape = [100, 221, 7]
+I0929 14:09:07.945181 22713187305280 make_examples_core.py:2959] example_channels = [1, 2, 3, 4, 5, 6, 19]
+I0929 14:09:07.952927 22713187305280 make_examples_core.py:301] Task 8/32: Found 5035 candidate variants
+I0929 14:09:07.952974 22713187305280 make_examples_core.py:301] Task 8/32: Created 5952 examples
+
+real	4m40.753s
+user	137m49.528s
+sys	2m45.333s
+
+***** Running the command:*****
+time /opt/deepvariant/bin/call_variants --outfile "results_exome/deepvariant/tmp/call_variants_output.tfrecord.gz" --examples "results_exome/deepvariant/tmp/make_examples.tfrecord@32.gz" --checkpoint "/opt/models/wes"
+
+/usr/local/lib/python3.8/dist-packages/tensorflow_addons/utils/tfa_eol_msg.py:23: UserWarning: 
+
+TensorFlow Addons (TFA) has ended development and introduction of new features.
+TFA has entered a minimal maintenance and release mode until a planned end of life in May 2024.
+Please modify downstream libraries to take dependencies from other repositories in our TensorFlow community (e.g. Keras, Keras-CV, and Keras-NLP). 
+
+For more information see: https://github.com/tensorflow/addons/issues/2807 
+
+  warnings.warn(
+I0929 14:09:13.607355 22419346999104 call_variants.py:563] Total 1 writing processes started.
+I0929 14:09:13.610447 22419346999104 dv_utils.py:370] From results_exome/deepvariant/tmp/make_examples.tfrecord-00000-of-00032.gz.example_info.json: Shape of input examples: [100, 221, 7], Channels of input examples: [1, 2, 3, 4, 5, 6, 19].
+I0929 14:09:13.610492 22419346999104 call_variants.py:588] Shape of input examples: [100, 221, 7]
+I0929 14:09:13.610831 22419346999104 call_variants.py:592] Use saved model: True
+I0929 14:09:18.041213 22419346999104 dv_utils.py:370] From /opt/models/wes/example_info.json: Shape of input examples: [100, 221, 7], Channels of input examples: [1, 2, 3, 4, 5, 6, 19].
+I0929 14:09:18.055231 22419346999104 dv_utils.py:370] From results_exome/deepvariant/tmp/make_examples.tfrecord-00000-of-00032.gz.example_info.json: Shape of input examples: [100, 221, 7], Channels of input examples: [1, 2, 3, 4, 5, 6, 19].
+I0929 14:09:20.152258 22419346999104 call_variants.py:716] Predicted 1024 examples in 1 batches [0.193 sec per 100].
+I0929 14:10:21.003186 22419346999104 call_variants.py:716] Predicted 52224 examples in 51 batches [0.120 sec per 100].
+I0929 14:11:22.390680 22419346999104 call_variants.py:716] Predicted 103424 examples in 101 batches [0.120 sec per 100].
+I0929 14:12:22.914609 22419346999104 call_variants.py:716] Predicted 154624 examples in 151 batches [0.119 sec per 100].
+I0929 14:13:11.386035 22419346999104 call_variants.py:779] Complete: call_variants.
+
+real	4m1.747s
+user	60m58.626s
+sys	0m28.360s
+
+***** Running the command:*****
+time /opt/deepvariant/bin/postprocess_variants --ref "data/ref/GRCh38_no_alt_analysis_set.fna" --infile "results_exome/deepvariant/tmp/call_variants_output.tfrecord.gz" --outfile "results_exome/deepvariant/NA12878.autosomes.dv.vcf.gz" --cpus "32"
+
+I0929 14:13:14.844079 22958870062912 postprocess_variants.py:1211] Using sample name from call_variants output. Sample name: NA12878
+2026-09-29 14:13:14.868982: I deepvariant/postprocess_variants.cc:94] Read from: results_exome/deepvariant/tmp/call_variants_output-00000-of-00001.tfrecord.gz
+2026-09-29 14:13:15.558089: I deepvariant/postprocess_variants.cc:109] Total #entries in single_site_calls = 195222
+I0929 14:13:16.478411 22958870062912 postprocess_variants.py:1313] CVO sorting took 0.026844318707784018 minutes
+I0929 14:13:16.481039 22958870062912 postprocess_variants.py:1316] Transforming call_variants_output to variants.
+I0929 14:13:16.481121 22958870062912 postprocess_variants.py:1318] Using 32 CPUs for parallelization of variant transformation.
+I0929 14:13:17.088322 22958870062912 postprocess_variants.py:1211] Using sample name from call_variants output. Sample name: NA12878
+I0929 14:13:19.475823 22958870062912 postprocess_variants.py:1365] Writing variants to VCF.
+I0929 14:13:19.475950 22958870062912 postprocess_variants.py:973] Writing output to VCF file: results_exome/deepvariant/NA12878.autosomes.dv.vcf.gz
+I0929 14:13:19.484244 22958870062912 genomics_writer.py:183] Writing results_exome/deepvariant/NA12878.autosomes.dv.vcf.gz with NativeVcfWriter
+I0929 14:13:19.523093 22958870062912 postprocess_variants.py:987] 1 variants written.
+I0929 14:13:22.041979 22958870062912 postprocess_variants.py:987] 100001 variants written.
+I0929 14:13:22.984645 22958870062912 postprocess_variants.py:1373] VCF creation took 0.058480048179626466 minutes
+
+real	0m11.685s
+user	0m17.358s
+sys	0m5.100s
+
+***** Running the command:*****
+time /opt/deepvariant/bin/vcf_stats_report --input_vcf "results_exome/deepvariant/NA12878.autosomes.dv.vcf.gz" --outfile_base "results_exome/deepvariant/NA12878.autosomes.dv"
+
+I0929 14:13:26.871410 23249491892032 genomics_reader.py:222] Reading results_exome/deepvariant/NA12878.autosomes.dv.vcf.gz with NativeVcfReader
+
+real	0m8.559s
+user	0m7.505s
+sys	0m3.713s
+[vcfeval] rtg vcfeval on autosomes within results_exome/bamqc/eval.bed
+Selected score threshold using: maximized F-measure
+Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+    5.600             104038         104043        944       2475     0.9910       0.9768     0.9838
+     None             104219         104225       1279       2294     0.9879       0.9785     0.9831
+
+Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+    5.600             104038         104043        944       2475     0.9910       0.9768     0.9838
+     None             104219         104225       1279       2294     0.9879       0.9785     0.9831
+
+type	TP	FP	FN	precision	recall	F1
+SNV	94231	746	1349	0.9921	0.9859	0.9890
+INDEL	9994	533	945	0.9494	0.9136	0.9311
+ALL	104225	1279	2294	0.9879	0.9785	0.9831
+stratum                       type   truth  TP     FP    FN    precision  recall  F1
+all                           SNV    95584  92317  1741  3285  0.9815     0.9656  0.9735
+all                           INDEL  10929  8376   2829  2632  0.7475     0.7592  0.7533
+homopolymer_ge7               SNV    1757   1624   42    146   0.9748     0.9169  0.9450
+homopolymer_ge7               INDEL  3868   2774   2417  1162  0.5344     0.6996  0.6059
+tandem_repeat_or_homopol      SNV    3665   3397   132   283   0.9626     0.9228  0.9423
+tandem_repeat_or_homopol      INDEL  5368   3449   2669  2001  0.5637     0.6272  0.5938
+not_tandem_repeat_or_homopol  SNV    91919  88920  1609  3002  0.9822     0.9673  0.9747
+not_tandem_repeat_or_homopol  INDEL  5561   4927   160   631   0.9685     0.8865  0.9257
+segdup                        SNV    12140  10907  1256  1233  0.8967     0.8984  0.8976
+segdup                        INDEL  859    619    67    242   0.9023     0.7183  0.7999
+low_mappability               SNV    5272   4381   835   894   0.8399     0.8304  0.8351
+low_mappability               INDEL  330    203    39    125   0.8388     0.6212  0.7138
+MHC                           SNV    1937   1727   58    210   0.9675     0.8916  0.9280
+MHC                           INDEL  130    88     8     44    0.9167     0.6615  0.7685
+all_difficult                 SNV    29419  27600  1482  1837  0.9490     0.9376  0.9433
+all_difficult                 INDEL  6873   4666   2739  2287  0.6301     0.6672  0.6482
+not_difficult                 SNV    66165  64717  259   1448  0.9960     0.9781  0.9870
+not_difficult                 INDEL  4056   3710   90    345   0.9763     0.9149  0.9446
+stratum                       type   truth  TP     FP   FN    precision  recall  F1
+all                           SNV    95584  94231  746  1349  0.9921     0.9859  0.9890
+all                           INDEL  10929  9994   533  945   0.9494     0.9135  0.9311
+homopolymer_ge7               SNV    1757   1709   31   41    0.9822     0.9767  0.9794
+homopolymer_ge7               INDEL  3868   3409   372  470   0.9016     0.8785  0.8899
+tandem_repeat_or_homopol      SNV    3665   3582   52   76    0.9857     0.9793  0.9825
+tandem_repeat_or_homopol      INDEL  5368   4561   497  819   0.9017     0.8474  0.8737
+not_tandem_repeat_or_homopol  SNV    91919  90649  694  1273  0.9924     0.9862  0.9893
+not_tandem_repeat_or_homopol  INDEL  5561   5433   36   126   0.9934     0.9773  0.9853
+segdup                        SNV    12140  11216  346  924   0.9701     0.9239  0.9464
+segdup                        INDEL  859    767    30   92    0.9624     0.8929  0.9263
+low_mappability               SNV    5272   4525   262  750   0.9453     0.8577  0.8994
+low_mappability               INDEL  330    259    23   69    0.9184     0.7909  0.8499
+MHC                           SNV    1937   1793   22   144   0.9879     0.9257  0.9558
+MHC                           INDEL  130    112    4    18    0.9655     0.8615  0.9106
+all_difficult                 SNV    29419  28350  459  1065  0.9841     0.9638  0.9738
+all_difficult                 INDEL  6873   5977   522  906   0.9197     0.8682  0.8932
+not_difficult                 SNV    66165  65881  287  284   0.9957     0.9957  0.9957
+not_difficult                 INDEL  4056   4017   11   39    0.9973     0.9904  0.9938
