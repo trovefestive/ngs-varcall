@@ -5,7 +5,9 @@
 # Requires rtg-tools (conda install -c bioconda rtg-tools).
 set -euo pipefail
 source config.sh
-EVAL=$OUT/vcfeval
+# CALLS and EVAL can be overridden to score another call set (e.g. DeepVariant) on the same BED
+CALLS=${CALLS:-$OUT/vcf/${SAMPLE}.${REGION}.vcf.gz}
+EVAL=${EVAL:-$OUT/vcfeval}
 EB=$OUT/bamqc/eval.bed
 SDF=$DATA/ref/${REGION}.sdf
 
@@ -20,7 +22,7 @@ fi
 rm -rf "$EVAL"
 echo "[vcfeval] rtg vcfeval on $REGION within $EB"
 rtg vcfeval -t "$SDF" \
-  -b "$TRUTH_VCF" -c "$OUT/vcf/${SAMPLE}.${REGION}.vcf.gz" \
+  -b "$TRUTH_VCF" -c "$CALLS" \
   --bed-regions "$EB" \
   --vcf-score-field QUAL --threads "${THREADS}" \
   -o "$EVAL"
