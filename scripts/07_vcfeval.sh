@@ -9,10 +9,10 @@ EVAL=$OUT/vcfeval
 EB=$OUT/bamqc/eval.bed
 SDF=$DATA/ref/${REGION}.sdf
 
-# Reference SDF restricted to the region (building the full genome SDF takes much longer)
+# Reference SDF restricted to REGION's chromosomes (building the full genome SDF takes much longer)
 if [ ! -d "$SDF" ]; then
   echo "[vcfeval] building SDF for $REGION"
-  samtools faidx "$REF" "$REGION" > "$DATA/ref/${REGION}.fa"
+  samtools faidx "$REF" $CHROMS > "$DATA/ref/${REGION}.fa"
   rtg format -o "$SDF" "$DATA/ref/${REGION}.fa"
   rm -f "$DATA/ref/${REGION}.fa"
 fi

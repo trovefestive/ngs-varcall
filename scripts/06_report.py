@@ -45,18 +45,28 @@ lines += ["## Alignment QC", "", "| metric | value |", "|---|---|",
           f"| mean base quality (region) | {sn.get('average quality', 'NA')} |", ""]
 
 # Coverage over the GIAB high-confidence territory
-depth = pd.read_csv(os.path.join(OUT, "bamqc", "depth.tsv.gz"), sep="\t", header=None,
-                    names=["chrom", "pos", "dp"])
+hist = pd.read_csv(os.path.join(OUT, "bamqc", "depth_hist.tsv"), sep="\t", header=None,
+                   names=["dp", "n"]).sort_values("dp")
 bed = pd.read_csv(os.path.join(OUT, "bamqc", "truth_region.bed"), sep="\t", header=None,
                   usecols=[0, 1, 2], names=["chrom", "s", "e"])
-covered = depth[depth.dp > 0]
+ev = pd.read_csv(os.path.join(OUT, "bamqc", "eval.bed"), sep="\t", header=None,
+                 usecols=[0, 1, 2], names=["chrom", "s", "e"])
+
+
+def hist_median(h):
+    c = h.n.cumsum()
+    return h.dp[c >= h.n.sum() / 2].iloc[0]
+
+
+covered, callable_ = hist[hist.dp > 0], hist[hist.dp >= MIN_DP]
 lines += ["## Coverage", "",
-          f"- Bases with any coverage: {len(covered):,}",
-          f"- Median depth where covered: {covered.dp.median():.0f}x",
-          f"- Bases at >= {MIN_DP}x: {(depth.dp >= MIN_DP).sum():,}",
-          f"- GIAB high-confidence bases on this chromosome: {int((bed.e - bed.s).sum()):,}", ""]
+          f"- Bases with any coverage: {covered.n.sum():,}",
+          f"- Median depth where covered: {hist_median(covered):.0f}x",
+          f"- Bases at >= {MIN_DP}x: {callable_.n.sum():,} (median depth {hist_median(callable_):.0f}x)",
+          f"- GIAB high-confidence bases in region: {int((bed.e - bed.s).sum()):,}",
+          f"- Evaluation territory (high-confidence ∩ callable): {int((ev.e - ev.s).sum()):,}", ""]
 fig, ax = plt.subplots(figsize=(6, 3.5))
-ax.hist(covered.dp.clip(upper=300), bins=60, color="#3b6ea5")
+ax.hist(covered.dp.clip(upper=300), bins=60, weights=covered.n, color="#3b6ea5")
 ax.axvline(MIN_DP, color="#c0392b", ls="--", lw=1, label=f"callable ≥{MIN_DP}x")
 ax.set_xlabel("depth (capped at 300)"); ax.set_ylabel("bases"); ax.set_title("Per-base depth, covered bases")
 ax.legend(frameon=False); fig.tight_layout(); fig.savefig(os.path.join(FIG, "depth_hist.png"), dpi=150)

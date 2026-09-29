@@ -3,7 +3,10 @@
 
 SAMPLE=NA12878
 THREADS=${THREADS:-8}
-REGION=chr20                       # restrict calling and evaluation to one chromosome
+# Restrict calling and evaluation to one chromosome, or REGION=autosomes for chr1-22
+# (the GIAB v4.2.1 truth covers autosomes only). REGION also labels output files.
+REGION=${REGION:-chr20}
+if [ "$REGION" = autosomes ]; then CHROMS=$(printf 'chr%s ' $(seq 1 22)); else CHROMS=$REGION; fi
 
 # Working directories
 DATA=${DATA:-data}
@@ -34,3 +37,4 @@ MIN_BASEQ=20
 MIN_CALLABLE_DP=10     # a base counts as "callable" at >= this depth
 FILTER_QUAL=20
 FILTER_DP=10
+FILTER_INDEL_AF=0.2    # indels with alt allele fraction below this get IndelLowAF (tuned on chr20, 4 lanes)
