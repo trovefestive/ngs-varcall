@@ -1,5 +1,6 @@
 data/
 results/
+results_*/
 test/data/
 test/results/
 logs/
