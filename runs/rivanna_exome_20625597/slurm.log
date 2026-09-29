@@ -1,0 +1,102 @@
+[bamqc] evaluation territory: 101269122 bp
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+Checking the headers and starting positions of 22 files
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Concatenating results_exome/vcf/tmp/chr1.bcf[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+	0.254596 seconds
+Concatenating results_exome/vcf/tmp/chr2.bcf	0.247564 seconds
+Concatenating results_exome/vcf/tmp/chr3.bcf	0.196618 seconds
+Concatenating results_exome/vcf/tmp/chr4.bcf	0.200943 seconds
+Concatenating results_exome/vcf/tmp/chr5.bcf	0.174761 seconds
+Concatenating results_exome/vcf/tmp/chr6.bcf	0.195634 seconds
+Concatenating results_exome/vcf/tmp/chr7.bcf	0.172901 seconds
+Concatenating results_exome/vcf/tmp/chr8.bcf	0.148415 seconds
+Concatenating results_exome/vcf/tmp/chr9.bcf	0.141376 seconds
+Concatenating results_exome/vcf/tmp/chr10.bcf	0.154552 seconds
+Concatenating results_exome/vcf/tmp/chr11.bcf	0.154804 seconds
+Concatenating results_exome/vcf/tmp/chr12.bcf	0.150930 seconds
+Concatenating results_exome/vcf/tmp/chr13.bcf	0.102067 seconds
+Concatenating results_exome/vcf/tmp/chr14.bcf	0.096586 seconds
+Concatenating results_exome/vcf/tmp/chr15.bcf	0.096656 seconds
+Concatenating results_exome/vcf/tmp/chr16.bcf	0.106546 seconds
+Concatenating results_exome/vcf/tmp/chr17.bcf	0.109123 seconds
+Concatenating results_exome/vcf/tmp/chr18.bcf	0.082089 seconds
+Concatenating results_exome/vcf/tmp/chr19.bcf	0.095996 seconds
+Concatenating results_exome/vcf/tmp/chr20.bcf	0.092456 seconds
+Concatenating results_exome/vcf/tmp/chr21.bcf	0.051181 seconds
+Concatenating results_exome/vcf/tmp/chr22.bcf	0.063604 seconds
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Lines   total/split/joined/realigned/mismatch_removed/dup_removed/skipped:	3893341/42393/0/26880/0/0/0
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+<frozen importlib._bootstrap>:491: RuntimeWarning: The global interpreter lock (GIL) has been enabled to load module 'pysam.libchtslib', which has not declared that it can run safely without the GIL. To override this behavior and keep the GIL disabled (at your own risk), run with PYTHON_GIL=0 or -Xgil=0.
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+SNV    TP= 92640 FP= 1418 FN= 2995  precision=0.9849 recall=0.9687 F1=0.9767 GT_conc=0.997
+INDEL  TP=  9413 FP= 1732 FN= 1793  precision=0.8446 recall=0.8400 F1=0.8423 GT_conc=0.9057
+ALL    TP=102053 FP= 3150 FN= 4788  precision=0.9701 recall=0.9552 F1=0.9626 GT_conc=0.9886
+[report] wrote results_exome/report.md
+[vcfeval] building SDF for autosomes
+Formatting FASTA data
+Processing "data/ref/autosomes.fa"
+
+Input Data
+Files              : autosomes.fa
+Format             : FASTA
+Type               : DNA
+Number of sequences: 22
+Total residues     : 2875001522
+Minimum length     : 46709983
+Mean length        : 130681887
+Maximum length     : 248956422
+
+Output Data
+SDF-ID             : 71d8e993-3af6-4a79-8e59-5517bd1daa5f
+Number of sequences: 22
+Total residues     : 2875001522
+Minimum length     : 46709983
+Mean length        : 130681887
+Maximum length     : 248956422
+[vcfeval] rtg vcfeval on autosomes within results_exome/bamqc/eval.bed
+Selected score threshold using: maximized F-measure
+Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+   26.766             100451         100548       4259       6062     0.9594       0.9431     0.9512
+     None             100596         100693       4570       5917     0.9566       0.9444     0.9505
+
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Threshold  True-pos-baseline  True-pos-call  False-pos  False-neg  Precision  Sensitivity  F-measure
+----------------------------------------------------------------------------------------------------
+   26.766             100451         100548       4259       6062     0.9594       0.9431     0.9512
+     None             100596         100693       4570       5917     0.9566       0.9444     0.9505
+
+type	TP	FP	FN	precision	recall	F1
+SNV	92317	1741	3285	0.9815	0.9656	0.9735
+INDEL	8376	2829	2632	0.7475	0.7609	0.7542
+ALL	100693	4570	5917	0.9566	0.9445	0.9505

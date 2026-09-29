@@ -1,0 +1,9 @@
+set	filter	mode	TP	FP	FN	precision	recall	F1
+chr20	nofilt	gt	179	74	58	0.7075	0.7553	0.7306
+chr20	nofilt	allele	206	47	31	0.8142	0.8692	0.8408
+chr20	filt	gt	175	57	62	0.7543	0.7384	0.7463
+chr20	filt	allele	200	32	37	0.8621	0.8439	0.8529
+heldout	nofilt	gt	8376	3303	2411	0.7172	0.7765	0.7457
+heldout	nofilt	allele	9315	2364	1365	0.7976	0.8722	0.8332
+heldout	filt	gt	8201	2772	2570	0.7474	0.7614	0.7543
+heldout	filt	allele	9119	1854	1560	0.8310	0.8539	0.8423

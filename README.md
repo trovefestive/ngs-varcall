@@ -1,4 +1,4 @@
-# Germline variant calling and QC on GIAB NA12878 (chr20 exome)
+# Germline variant calling and QC on GIAB NA12878 (exome)
 
 A small, reproducible short-read variant-calling workflow benchmarked against the
 Genome in a Bottle HG001 (NA12878) v4.2.1 truth set. It covers the steps a sequencing
@@ -7,8 +7,8 @@ coverage and a callable-region mask, variant calling, and accuracy against a kno
 with a short list of false positives and false negatives to review in IGV.
 
 **Status:** pipeline tested end to end on simulated data (`test/`) and run on Rivanna against GIAB HG001
-chr20, first on one exome lane and then on all four lanes merged. Results and site review are below;
-the full reports and small outputs for each run are kept in `runs/`.
+chr20 (one exome lane, then all four lanes merged) and on all autosomes from the four-lane BAM.
+Results and site review are below; the full reports and small outputs for each run are kept in `runs/`.
 
 ## Workflow
 
@@ -17,12 +17,14 @@ the full reports and small outputs for each run are kept in `runs/`.
 | 0 | `00_download.sh` | curl, samtools, bwa | GRCh38 no-alt reference + BWA index, NIST7035 exome FASTQ, GIAB truth VCF/BED |
 | 1 | `01_read_qc.sh` | fastp | trimmed reads, Q30/GC/adapter report |
 | 2 | `02_align.sh` | bwa mem, samtools fixmate/sort/markdup | duplicate-marked BAM |
-| 3 | `03_bam_qc.sh` | samtools flagstat/stats/depth, bedtools | mapping/duplicate/insert-size QC, per-base depth, callable BED, evaluation BED |
-| 4 | `04_call.sh` | bcftools mpileup/call/norm/filter | normalized, soft-filtered VCF (`LowQual`: QUAL<20 or DP<10) |
+| 3 | `03_bam_qc.sh` | samtools flagstat/stats/depth, bedtools | mapping/duplicate/insert-size QC, depth histogram, callable BED, evaluation BED |
+| 4 | `04_call.sh` | bcftools mpileup/call/norm/filter | normalized, soft-filtered VCF (`LowQual`: QUAL<20 or DP<10; `IndelLowAF`: indel alt fraction < 0.2) |
 | 5 | `05_evaluate.sh`, `evaluate.py` | bcftools, pysam | precision / recall / F1 for SNVs and indels, genotype concordance, per-site table |
 | 6 | `06_report.py` | pandas, matplotlib | `results/report.md` with figures |
 
-The evaluation territory is GIAB high-confidence regions on chr20 intersected with bases
+`REGION` in `config.sh` sets the chromosomes: chr20 by default, or `REGION=autosomes` for chr1-22
+(the GIAB v4.2.1 truth covers autosomes only). Steps 3 and 4 run one chromosome per process.
+The evaluation territory is GIAB high-confidence regions on those chromosomes intersected with bases
 covered at ≥10x in this sample, so exome off-target regions are not counted as misses.
 
 ## Run it
@@ -40,6 +42,9 @@ sbatch slurm/run_rivanna.slurm
 
 # 3) optional: all four Garvan lanes merged (after step 2; writes results_4lane/)
 sbatch slurm/run_rivanna_4lane.slurm
+
+# 4) optional: whole exome, chr1-22, reusing the four-lane BAM (after step 3; writes results_exome/)
+sbatch slurm/run_rivanna_exome.slurm
 ```
 
 Settings (threads, thresholds, paths, URLs) are in `config.sh`. If your cluster already
@@ -105,8 +110,32 @@ What the numbers and the IGV review show:
   four-lane run, 39 have alt fraction below 0.35 and 17 below 0.2. Some other indel FPs are the right
   allele with the wrong genotype (14 of 41 on the common region at four lanes, 11 at one lane), or
   multi-allelic sites where only one of two alt alleles matches the truth (e.g. 25452811).
-- **Next step:** a stricter indel filter (allele fraction, or bcftools `IMF`/`IDV`) or a
-  local-assembly caller should recover most of the indel precision lost at higher depth.
+
+The chr20 runs above predate the `IndelLowAF` filter; their VCFs carry only `LowQual`.
+
+### Whole exome, chr1-22 (job 20625597, `runs/rivanna_exome_20625597/`)
+
+Four-lane BAM, not realigned. 107.3 Mb at ≥10x (median 63x), 101.3 Mb evaluation territory,
+106,841 truth variants. vcfeval, genotype-aware, PASS calls with `IndelLowAF`:
+
+| type | TP | FP | FN | precision | recall | F1 |
+|---|---:|---:|---:|---:|---:|---:|
+| SNV | 92317 | 1741 | 3285 | 0.9815 | 0.9656 | 0.9735 |
+| INDEL | 8376 | 2829 | 2632 | 0.7475 | 0.7609 | 0.7542 |
+| ALL | 100693 | 4570 | 5917 | 0.9566 | 0.9445 | 0.9505 |
+
+- **Indel filter, tuned on chr20 and checked on the other chromosomes.** Sweeping allele-fraction and
+  `IDV` cutoffs on the chr20 four-lane calls, the best genotype-aware indel F1 came from soft-filtering
+  indels with alt fraction < 0.2 (0.731 to 0.746); `IDV` added nothing. On the 21 held-out autosomes
+  the same filter raises indel precision by 3.0 points for 1.5 points of recall (F1 0.746 to 0.754;
+  allele-only 0.833 to 0.842). The gain is real but small: the remaining indel errors are wrong-allele
+  calls in repeats and right-allele/wrong-genotype calls, many at sites bcftools calls as two different
+  indel alleles (`1/2`). Those need a haplotype-aware caller rather than a filter.
+- **Mapping limits recur genome-wide.** 139 of the 163 SNV false negatives on chr6 sit in the MHC
+  (chr6:28.5-33.5 Mb), the largest cluster in the exome, the same kind of short-read mapping limit as
+  the chr20:5.47 Mb paralog cluster.
+- Without the new filter, the chr20 subset of the exome run gives exactly the chr20-only four-lane counts, so the
+  per-chromosome rewrite of steps 3-4 reproduces the earlier results.
 
 ## Data sources
 
